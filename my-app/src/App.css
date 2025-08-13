@@ -1,0 +1,23 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.addBtn{
+  width: 25%;
+  display: flex;
+  gap:5px;
+  justify-content:center;
+  align-items:center;
+}
+
+.modal {
+  margin: 10px 0;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+
+
