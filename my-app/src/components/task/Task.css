@@ -1,3 +1,29 @@
-.task{
-    border: 1px solid gray;
+
+.task {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.actions span {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.task input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.task.completed label {
+  text-decoration: line-through;
+  color: grey;
+}
+
+
+.task-list {
+  margin-top: 20px;
+}
+
+img{
+    width: 30px;
+    height: 30px;
 }

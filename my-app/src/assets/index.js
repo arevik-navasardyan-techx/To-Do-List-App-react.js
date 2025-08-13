@@ -1,7 +1,7 @@
-import addIcon from "./add.png";
-import closeIcon from "./close.png";
-import editIcon from "./edit.png";
-import deleteIcon from "./delete.png";
+import addIcon from "./add.svg";
+import closeIcon from "./close.svg";
+import editIcon from "./edit.svg";
+import deleteIcon from "./delete.svg";
 
 export {
   addIcon,
