@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 import Task from "./components/task/Task";
+import { closeIcon, addIcon } from "./assets";
+
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,13 +17,19 @@ function App() {
     setIsOpen(false); 
   }
 
-  function handleAddTask() {
+  function addTask() {
     if (input.trim() === "") {
        alert("Task cannot be empty!");
        return;
     } 
-    setTasks((tasks)=> [...tasks, input]); 
-    setInput(""); 
+
+    const newTask = {
+      id: Date.now(), 
+      name: input
+    };
+
+    setTasks((tasks) => [...tasks, newTask]);
+    setInput("");
     closeModal(); 
   }
 
@@ -29,7 +37,7 @@ function App() {
     <div className="main-container">
       <button onClick={openModal}>
         <span>
-          <img src="./assets/add.png" alt="Add task" />
+          <img src={addTaskIcon} alt="Add task" />
         </span>
         Add task
       </button>
@@ -37,7 +45,7 @@ function App() {
       {isOpen && (
         <div className="modal">
           <span className="closeModal" onClick={closeModal}>
-            <img src="./assets/close.png" alt="close" />
+            <img src={closeIcons} alt="close" />
           </span>
           <input
             type="text"
@@ -45,11 +53,18 @@ function App() {
             value={input}
             onChange={(e) => setInput(e.target.value)} 
           />
-          <button id="add" onClick={handleAddTask}>
+          <button id="add" onClick={addTask}>
             Ok
           </button>
         </div>
       )}
+
+{/* 
+      <div className="task-list">
+        {tasks.map((task, index) => (
+          <Task key={index} name={task} />
+        ))}
+      </div> */}
 
       
     </div>
